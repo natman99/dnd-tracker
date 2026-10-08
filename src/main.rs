@@ -1,9 +1,6 @@
-use std::{
-    fs,
-    path::{Path, PathBuf},
-};
+use std::{fs, path::Path};
 
-use eframe::egui::{self, Color32, Id, Key, RichText};
+use eframe::egui::{self, Color32, Key, RichText};
 use egui_extras::{Column, TableBuilder};
 use serde::{Deserialize, Serialize};
 
@@ -36,7 +33,7 @@ struct MyEguiApp {
 }
 
 impl MyEguiApp {
-    fn new(cc: &eframe::CreationContext<'_>) -> Self {
+    fn new(_cc: &eframe::CreationContext<'_>) -> Self {
         // Customize egui here with cc.egui_ctx.set_fonts and cc.egui_ctx.set_global_style.
         // Restore app state using cc.storage (requires the "persistence" feature).
         // Use the cc.gl (a glow::Context) to create graphics shaders and buffers that you can use
@@ -51,7 +48,7 @@ impl MyEguiApp {
 }
 
 impl eframe::App for MyEguiApp {
-    fn ui(&mut self, ui: &mut egui::Ui, frame: &mut eframe::Frame) {
+    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ui, |ui| {
             ui.heading("D&D Tracker");
             let height = ui.available_height();
@@ -171,7 +168,7 @@ impl eframe::App for MyEguiApp {
                     }
 
                     body.row(18.0, |mut row| {
-                        row.col(|ui| {});
+                        row.col(|_ui| {});
                     });
                     body.row(18.0, |mut row| {
                         row.col(|ui| {
